@@ -7,3 +7,17 @@
 	color:#DDDD99;
 	font-weight:bold;
 }
+
+#login button {
+	width:150px;
+	height:30px;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #3A3A3A), color-stop(1, #3A3A3A) );
+	background:-moz-linear-gradient(center top, #3A3A3A 0%, #3A3A3A 100% );
+	font-size:14px;
+	color:#DDDD99;
+	font-weight:bold;
+}
+
+#login input {
+	width:150px;
+}

@@ -10,16 +10,21 @@
 				<td colspan=3 align="center">
 					Banner
 				</td>
-				<td colspan=2 align="center">
-					Login
+				<td id="login" colspan=2 align="right">
+					<FORM action="post" method="home.jsp">
+						Benutzername: <INPUT type=text name=benutzer> <br>
+						Passwort: <INPUT type=password name=passwort> <br>
+						<button type="submit" name="login" value="Login">Anmelden</button>
+						<a href="register.html"><button type=button>Registrieren</button></a>
+					</FORM>
 				</td>
 			<tr>
 			<tr id="navigation" height=40>
-				<td><button><font>Nav1</font></button></td>
-				<td><button><font>Nav2</font></button></td>
-				<td><button><font>Nav3</font></button></td>
-				<td><button><font>Nav4</font></button></td>
-				<td><button><font>Nav5</font></button></td>
+				<td><button>Nav1</button></td>
+				<td><button>Nav2</button></td>
+				<td><button>Nav3</button></td>
+				<td><button>Nav4</button></td>
+				<td><button>Nav5</button></td>
 			</tr>
 		</table>
 	</body>
