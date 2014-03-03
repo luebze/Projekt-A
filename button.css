@@ -8,6 +8,11 @@
 	font-weight:bold;
 }
 
+#login {
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
 #login button {
 	width:150px;
 	height:30px;
