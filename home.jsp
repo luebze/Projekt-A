@@ -31,8 +31,9 @@
 	<head>
 		<title>Home</title>
 		<link rel="stylesheet" type="text/css" href="button.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body bgcolor="#520000">
+	<body>
 		<!--"border=1" vor Release entfernen-->
 		<table width=1024 align="center" bgcolor="#FFFFFF" border=1>
 			<tr height=256>
