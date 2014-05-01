@@ -8,8 +8,7 @@
 	//eingegebene Daten des Login-Feldes (auf Folgenden Seiten:
 	//home.jsp, shop.jsp, product.jsp, cart.jsp, account.jsp, updateAccount.jsp,
 	//product.jsp, boughtProduct.jsp, logout.jsp, removeFromCart.jsp)
-	String name = request.getParameter("benutzer");
-	String pwd = request.getParameter("passwort");
+	String selectedCategory = request.getParameter("selectedCategory");
 		
 	if (session.getAttribute("benutzer") == null) {
 		session.setAttribute("benutzer", name);
