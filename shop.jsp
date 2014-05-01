@@ -143,7 +143,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan='2'><hr></td>
+				<td colspan=5><hr></td>
 			</tr>
 					<%
 						}
