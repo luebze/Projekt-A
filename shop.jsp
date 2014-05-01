@@ -94,7 +94,7 @@
 						}
 					%>
 				</td>
-			<tr>
+			<tr id="navigation" height=40>
 				<FORM method="get" action="shop.jsp">
 					<td><button type="submit" name="selectedCategory" value="Alle">Alle Produkte</button></td>
 					<td><button type="submit" name="selectedCategory" value="Motorrad">Motorr&aumlder</button></td>
@@ -102,6 +102,7 @@
 				</FORM>
 					<td><button>Nav3</button></td>
 					<td><button>Nav4</button></td>
+			</tr>
 			<tr>
 				<td colspan=5 align="center">
 					<%
