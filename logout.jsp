@@ -13,6 +13,9 @@
 		
 	session.setAttribute("benutzer", null);
 	session.setAttribute("passwort", null);
+	
+	String jName = (String) session.getAttribute("benutzer");
+	String jPwd = (String) session.getAttribute("passwort");
 		
 	try
 	{
