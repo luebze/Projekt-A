@@ -105,7 +105,7 @@
 					<%
 					//Connection zum DB-Server eroeffnen
 					try {
-						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dw40", "dw40", "&zH*");
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/max1", "max1", "FJp=");
 
 						//Jetzt einen SQLBefehl vorbereiten
 						Statement st = con.createStatement();	//(noch) leeres Statement / leerer SQL-Befehl
