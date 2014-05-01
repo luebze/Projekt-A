@@ -117,7 +117,7 @@
 						//Hier die Cursor-Schleife
 						//Gibt alle Artikel in eigenen Tabellenzeilen aus
 						while (rs.next()) {
-							String name = rs.getString("name");
+							String artikelName = rs.getString("name");
 							String preis = rs.getString("preis");
 							String img = rs.getString("img");
 							String anzahl = rs.getString("anzahl");
@@ -125,7 +125,7 @@
 			<tr>
 				<td align="center"><img src=<%=img%> width='160' height='160'></img></td>
 				<td colspan=4 align="right"><br>
-					<%=name%><br>
+					<%=artikelName%><br>
 					<%=preis%> Euro<br>
 					if(anzahl.equals("0")) {
 						<font color="#FF0000">Ausverkauft</font>
@@ -138,7 +138,7 @@
 			<tr>
 				<td colspan=5 align="right">
 					<FORM method="get" action="product.jsp">
-						<button type=submit name="artikelName" value=<%=name%>>Ansehen</button>
+						<button type=submit name="artikelName" value=<%=artikelName%>>Ansehen</button>
 					</FORM>
 				</td>
 			</tr>
