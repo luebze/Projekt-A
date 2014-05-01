@@ -2,13 +2,16 @@
 <%@ page import = "java.io.*" import = "java.sql.*" import = "javax.servlet.*" import = "javax.servlet.http.*" %>
 
 <%
+	String selectedCategory = request.getParameter("selectedCategory");
+	
 	session = request.getSession();
 	String jSessionID = session.getId();
 		
 	//eingegebene Daten des Login-Feldes (auf Folgenden Seiten:
 	//home.jsp, shop.jsp, product.jsp, cart.jsp, account.jsp, updateAccount.jsp,
 	//product.jsp, boughtProduct.jsp, logout.jsp, removeFromCart.jsp)
-	String selectedCategory = request.getParameter("selectedCategory");
+	String name = request.getParameter("benutzer");
+	String pwd = request.getParameter("passwort");
 		
 	if (session.getAttribute("benutzer") == null) {
 		session.setAttribute("benutzer", name);
