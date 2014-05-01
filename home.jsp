@@ -100,6 +100,20 @@
 				<td><button>Nav4</button></td>
 				<td><button>Nav5</button></td>
 			</tr>
+			<tr>
+				<td colspan=5 align="center">
+					<font size="6">
+					Herzlich Willkommen auf unserer Homepage!<br>
+					</font>
+					<br>
+					<font size="5">
+					Auf dieser Seite k&oumlnnen sie sich deutschlandweit &uumlber den Vertieb von Motorr&aumldern informieren.<br>
+					Finden sie heraus in welchen Regionen sie mit welchen Zweir&aumldern landen k&oumlnnen.<br>
+					Unsere Software stellt ihnen basierend auf neusten Daten eine passende Heat-Map aus.<br>
+					Bestellen sie ihre Fahrzeuge direkt bei uns!<br>
+					</font>
+				</td>
+			</tr>
 		</table>
 	</body>
 </html>
