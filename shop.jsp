@@ -93,13 +93,13 @@
 					%>
 				</td>
 			<tr>
-			<tr id="navigation" height=40>
-				<td><button>Nav1</button></td>
-				<td><button>Nav2</button></td>
-				<td><button>Nav3</button></td>
-				<td><button>Nav4</button></td>
-				<td><button>Nav5</button></td>
-			</tr>
+				<FORM method="get" action="shop.jsp">
+					<td><button type="submit" name="selectedCategory" value="Alle">Alle Produkte</button></td>
+					<td><button type="submit" name="selectedCategory" value="Motorrad">Motorr&aumlder</button></td>
+					<td><button type="submit" name="selectedCategory" value="Motorroller">Motorroller</button></td>
+				</FORM>
+					<td><button>Nav3</button></td>
+					<td><button>Nav4</button></td>
 			<tr>
 				<td colspan=5 align="center">
 					<%
@@ -112,7 +112,12 @@
 	
 						//ResultSet mit Cursor bearbeiten und ausgeben
 						//Findet alle Artikel der ausgewaehlten Kategorie
-						ResultSet rs = st.executeQuery("select * from artikel"); //natural join kategorie where kategorie = '" + selectedCategory + "'");
+						ResultSet rs;
+						if (selectedCategory.equalsIgnoreCase("alle")) {
+							rs = st.executeQuery("select * from artikel");
+						} else {
+							rs = st.executeQuery("select * from artikel natural join kategorie where kategorie = '" + selectedCategory + "'");
+						}
 	
 						//Hier die Cursor-Schleife
 						//Gibt alle Artikel in eigenen Tabellenzeilen aus
