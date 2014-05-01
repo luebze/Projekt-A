@@ -11,12 +11,14 @@
 	String name = request.getParameter("benutzer");
 	String pwd = request.getParameter("passwort");
 		
-	session.setAttribute("benutzer", null);
-	session.setAttribute("passwort", null);
+	if (session.getAttribute("benutzer") == null) {
+		session.setAttribute("benutzer", name);
+		session.setAttribute("passwort", pwd);
+	}
 	
 	String jName = (String) session.getAttribute("benutzer");
 	String jPwd = (String) session.getAttribute("passwort");
-		
+	
 	try
 	{
 		Class.forName("org.gjt.mm.mysql.Driver");	//Da sind die Treiber
@@ -92,26 +94,65 @@
 				</td>
 			<tr>
 			<tr id="navigation" height=40>
-				<FORM method="get" action="shop.jsp">
-					<td><button type="submit" name="selectedCategory" value="">Nav1</button></td><!-- TODO: Add values -->
-					<td><button type="submit" name="selectedCategory" value="">Nav2</button></td>
-					<td><button type="submit" name="selectedCategory" value="">Nav3</button></td>
-					<td><button type="submit" name="selectedCategory" value="">Nav4</button></td>
-					<td><button type="submit" name="selectedCategory" value="">Nav5</button></td>
-				</FORM>
+				<td><button>Nav1</button></td>
+				<td><button>Nav2</button></td>
+				<td><button>Nav3</button></td>
+				<td><button>Nav4</button></td>
+				<td><button>Nav5</button></td>
 			</tr>
 			<tr>
 				<td colspan=5 align="center">
-					<font size="6">
-					Herzlich Willkommen auf unserer Homepage!<br>
-					</font>
-					<br>
-					<font size="5">
-					Auf dieser Seite k&oumlnnen sie sich deutschlandweit &uumlber den Vertieb von Motorr&aumldern informieren.<br>
-					Finden sie heraus in welchen Regionen sie mit welchen Zweir&aumldern landen k&oumlnnen.<br>
-					Unsere Software stellt ihnen basierend auf neusten Daten eine passende Heat-Map aus.<br>
-					Bestellen sie ihre Fahrzeuge direkt bei uns!<br>
-					</font>
+					<%
+					//Connection zum DB-Server eroeffnen
+					try {
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dw40", "dw40", "&zH*");
+
+						//Jetzt einen SQLBefehl vorbereiten
+						Statement st = con.createStatement();	//(noch) leeres Statement / leerer SQL-Befehl
+	
+						//ResultSet mit Cursor bearbeiten und ausgeben
+						//Findet alle Artikel der ausgewaehlten Kategorie
+						ResultSet rs = st.executeQuery("select * from artikel"); //natural join kategorie where kategorie = '" + selectedCategory + "'");
+	
+						//Hier die Cursor-Schleife
+						//Gibt alle Artikel in eigenen Tabellenzeilen aus
+						while (rs.next()) {
+							String name = rs.getString("name");
+							String preis = rs.getString("preis");
+							String img = rs.getString("img");
+							String anzahl = rs.getString("anzahl");
+					%>
+			<tr>
+				<td align="center"><img src=<%=img%> width='160' height='160'></img></td>
+				<td colspan=4 align="right"><br>
+					<%=name%><br>
+					<%=preis%> Euro<br>
+					if(anzahl.equals("0")) {
+						<font color="#FF0000">Ausverkauft</font>
+					} else {
+						Anzahl: <%=anzahl%>
+					}
+				</td>
+				<br>
+			</tr>
+			<tr>
+				<td colspan=5 align="right">
+					<FORM method="get" action="product.jsp">
+						<button type=submit name="artikelName" value=<%=name%>>Ansehen</button>
+					</FORM>
+				</td>
+			</tr>
+			<tr>
+				<td colspan='2'><hr></td>
+			</tr>
+					<%
+						}
+						st.close();
+						con.close();
+					} catch (Exception e) {
+						out.println(" MYSQL Exception: " + e.getMessage());
+					}
+					%>
 				</td>
 			</tr>
 		</table>
