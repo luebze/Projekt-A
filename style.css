@@ -4,4 +4,7 @@ body {
 
 table {
 	background-color:#DDDDDD;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
 }

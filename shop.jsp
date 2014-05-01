@@ -94,6 +94,7 @@
 						}
 					%>
 				</td>
+			</tr>
 			<tr id="navigation" height=40>
 				<FORM method="get" action="shop.jsp">
 					<td><button type="submit" name="selectedCategory" value="Alle">Alle Produkte</button></td>
@@ -103,8 +104,6 @@
 					<td><button>Nav3</button></td>
 					<td><button>Nav4</button></td>
 			</tr>
-			<tr>
-				<td colspan=5 align="center">
 					<%
 					//Connection zum DB-Server eroeffnen
 					try {
@@ -167,8 +166,6 @@
 						out.println(" MYSQL Exception: " + e.getMessage());
 					}
 					%>
-				</td>
-			</tr>
 		</table>
 	</body>
 </html>

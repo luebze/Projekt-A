@@ -90,6 +90,7 @@
 						}
 					%>
 				</td>
+			</tr>
 			<tr>
 			<tr id="navigation" height=40>
 				<FORM method="get" action="shop.jsp">
