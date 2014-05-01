@@ -127,11 +127,17 @@
 				<td colspan=4 align="right"><br>
 					<%=artikelName%><br>
 					<%=preis%> Euro<br>
+					<%
 					if(anzahl.equals("0")) {
+					%>
 						<font color="#FF0000">Ausverkauft</font>
+					<%
 					} else {
+					%>
 						Anzahl: <%=anzahl%>
+					<%
 					}
+					%>
 				</td>
 				<br>
 			</tr>
